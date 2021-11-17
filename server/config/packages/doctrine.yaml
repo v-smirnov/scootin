@@ -1,0 +1,32 @@
+doctrine:
+    dbal:
+        dbname: '%env(DATABASE_NAME)%'
+        host: '%env(DATABASE_HOST)%'
+        port: '%env(DATABASE_PORT)%'
+        user: '%env(DATABASE_USER)%'
+        password: '%env(DATABASE_PASSWORD)%'
+        driver: '%env(DATABASE_DRIVER)%'
+        server_version: '8'
+
+        types:
+            geometry: LongitudeOne\Spatial\DBAL\Types\GeometryType
+            point: LongitudeOne\Spatial\DBAL\Types\Geometry\PointType
+            polygon: LongitudeOne\Spatial\DBAL\Types\Geometry\PolygonType
+            linestring: LongitudeOne\Spatial\DBAL\Types\Geometry\LineStringType
+
+    orm:
+        auto_generate_proxy_classes: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+        auto_mapping: true
+        mappings:
+            App:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/Domain/Entity'
+                prefix: 'App\Domain\Entity'
+                alias: App
+        dql:
+            numeric_functions:
+                st_within: LongitudeOne\Spatial\ORM\Query\AST\Functions\Standard\StWithin
+            string_functions:
+                st_geomfromtext: LongitudeOne\Spatial\ORM\Query\AST\Functions\Standard\StGeomFromText
