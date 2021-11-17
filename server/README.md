@@ -65,10 +65,10 @@ curl -X PUT 'http://127.0.0.1:5555/api/vehicle/{vehicle_identifier}/status/{stat
 ```
 curl -X GET 'http://127.0.0.1:5555/api/vehicles/{type}/status/{status}' -H 'API-KEY: toobanitoocs' \
 --data-raw '{
-    "start_latitude": 52.444906,
-    "start_longitude": 13.278702,
-    "end_latitude": 52.557687,
-    "end_longitude": 13.529307
+    "start_latitude": 52.419687,
+    "start_longitude": 13.157065,
+    "end_latitude": 52.597160,
+    "end_longitude": 13.601000
 }'
 ```
 
