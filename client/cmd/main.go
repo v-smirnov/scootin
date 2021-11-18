@@ -2,14 +2,15 @@ package main
 
 import (
 	"fmt"
-	"github.com/v-smirnov/scootin/app/application"
-	"github.com/v-smirnov/scootin/app/domain"
-	"github.com/v-smirnov/scootin/app/infrastructure"
 	"log"
 	"math/rand"
 	"os"
 	"sync"
 	"time"
+
+	"github.com/v-smirnov/scootin/app/application"
+	"github.com/v-smirnov/scootin/app/domain"
+	"github.com/v-smirnov/scootin/app/infrastructure"
 )
 
 const (
